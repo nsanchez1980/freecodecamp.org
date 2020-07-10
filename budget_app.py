@@ -51,9 +51,6 @@ def create_spend_chart(categories):
     total = 0
     porcentajes = []
     maxlen = 0
-    a = ""
-
-   
 
     for x in categories:
         for y in x.ledger:
@@ -63,16 +60,9 @@ def create_spend_chart(categories):
         spent.append([sum,x.categoria])
         sum = 0
 
-    print(spent)
-
     for x in spent:
         this = [int(x[0]*100/total),x[1]]
         porcentajes.append(this)
-
-    print(porcentajes)
-
-    #porcentajes = sorted(porcentajes, reverse=True)
-    print(porcentajes)
     index = 100
     while index >=0:
         result= result + str(index).rjust(3)+"|"
